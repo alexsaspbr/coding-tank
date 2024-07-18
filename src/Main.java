@@ -3,17 +3,39 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
 
-        /*Scanner entrada = new Scanner(System.in);
-        System.out.println("Digite seu nome");
-        String nome = entrada.nextLine();
-        System.out.println("Digite sua idade");
-        Integer idade = Integer.parseInt(entrada.nextLine());
-        System.out.printf("Hello, %s sua idade é %d", nome, idade);*/
+        String nome = solicitarDados(input, "Nome:");
+        String dataNascimento = solicitarDados(input, "Data de nascimento:");
+        String endereco = solicitarDados(input, "Endereço (logradouro, número, bairro, cidade, estado):");
+        String complemento = solicitarDados(input, "Complemento:");
+        String profissao = solicitarDados(input, "Profissão:");
+        String email = solicitarDados(input, "E-mail:");
+        String telefone = solicitarDados(input, "Telefone:");
 
-
-        new MaiorNumero().maiorNumero();
+        imprimirDados(nome, dataNascimento, endereco,
+                complemento, profissao, email,telefone);
 
     }
+
+    public static String solicitarDados(Scanner input, String dadoSolicitado) {
+        System.out.println(dadoSolicitado);
+        return input.nextLine();
+    }
+
+    public static void imprimirDados(String nome, String dataNascimento,
+                              String endereco,  String complemento,
+                              String profissao, String email, String telefone) {
+        System.out.println("Pessoa { "
+                + "nome = "+ nome
+                + "Data de nascimento: = "+ dataNascimento
+                + "Endereço = "+ endereco
+                + "Complemento = "+ complemento
+                + "Profissão = "+ profissao
+                + "E-mail = "+ email
+                + "Telefone = "+ telefone
+                +" }");
+    }
+
 
 }
