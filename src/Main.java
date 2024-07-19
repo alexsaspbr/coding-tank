@@ -5,7 +5,7 @@ public class Main {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
 
-        String nome = solicitarDados(input, "Nome:");
+        /*String nome = solicitarDados(input, "Nome:");
         String dataNascimento = solicitarDados(input, "Data de nascimento:");
         String endereco = solicitarDados(input, "Endereço (logradouro, número, bairro, cidade, estado):");
         String complemento = solicitarDados(input, "Complemento:");
@@ -15,6 +15,21 @@ public class Main {
 
         imprimirDados(nome, dataNascimento, endereco,
                 complemento, profissao, email,telefone);
+*/
+
+        String operacao = solicitarDados(input, "Digite a operacao (+, -, *, /)");
+        String primeiroNumero = solicitarDados(input, "Digite o primeiro numero");
+        String segundoNumero = solicitarDados(input, "Digite o segundo numero");
+        double num1 = Double.parseDouble(primeiroNumero);
+        double num2 = Double.parseDouble(segundoNumero);
+
+        switch (operacao) {
+            case "+":
+                System.out.println(OperacaoMatematica.ADICAO.calcular(num1, num2));
+                break;
+
+        }
+
 
     }
 
