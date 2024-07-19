@@ -17,19 +17,55 @@ public class Main {
                 complemento, profissao, email,telefone);
 */
 
-        String operacao = solicitarDados(input, "Digite a operacao (+, -, *, /)");
-        String primeiroNumero = solicitarDados(input, "Digite o primeiro numero");
-        String segundoNumero = solicitarDados(input, "Digite o segundo numero");
-        double num1 = Double.parseDouble(primeiroNumero);
-        double num2 = Double.parseDouble(segundoNumero);
+       /* int controlador = 0;
 
-        switch (operacao) {
-            case "+":
-                System.out.println(OperacaoMatematica.ADICAO.calcular(num1, num2));
-                break;
+        do {
+            String operacao = solicitarDados(input, "Digite a operacao (+, -, *, /)");
+            String primeiroNumero = solicitarDados(input, "Digite o primeiro numero");
+            String segundoNumero = solicitarDados(input, "Digite o segundo numero");
+            double num1 = Double.parseDouble(primeiroNumero);
+            double num2 = Double.parseDouble(segundoNumero);
 
+            switch (operacao) {
+                case "+":
+                    System.out.println(OperacaoMatematica.ADICAO.calcular(num1, num2));
+                    break;
+
+            }
+
+            controlador = Integer.parseInt(solicitarDados(input, "Digite 0 - para sair, 1 - para continuar"));
+
+        } while(controlador == 1);*/
+
+        int [] numeros = {1, 2, 3, 4, 5};
+        int [] numeros2 = new int[2];
+        numeros2[0] = 20;
+        numeros2[1] = 87;
+        lerArrayComWhile(numeros);
+        lerArrayComFor(numeros2);
+
+        double pi = 3.14187987897;
+        System.out.printf("O numero PI é %.2f", pi);
+
+
+    }
+
+    public static   void lerArrayComFor(int [] numeros) {
+
+        for(int contador = 0; contador < numeros.length; contador++) {
+            System.out.printf("Numero da posicao %d é %d \n", contador, numeros[contador]);
         }
 
+    }
+
+    public static   void lerArrayComWhile(int [] numeros) {
+        int tamanho = numeros.length;
+        int contador = 0;
+
+        while(contador < tamanho) {
+            System.out.printf("Numero da posicao %d é %d \n", contador, numeros[contador]);
+            contador++;
+        }
 
     }
 
